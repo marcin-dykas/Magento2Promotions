@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) Marcin Dykas
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Webapi/etc/webapi.xsd">
+    <!-- Group Endpoints -->
+    <route url="/V1/groups/:groupId" method="GET">
+        <service class="MarcinDykas\Promotions\Api\GroupRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::group_view"/>
+        </resources>
+    </route>
+    <route url="/V1/groups/:groupId" method="DELETE">
+        <service class="MarcinDykas\Promotions\Api\GroupRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::group_delete"/>
+        </resources>
+    </route>
+    <route url="/V1/groups" method="POST">
+        <service class="MarcinDykas\Promotions\Api\GroupRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::group_save"/>
+        </resources>
+    </route>
+    <route url="/V1/groups" method="GET">
+        <service class="MarcinDykas\Promotions\Api\GroupRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::group_view"/>
+        </resources>
+    </route>
+
+    <!-- Promotion Endpoints -->
+    <route url="/V1/promotions/:promotionId" method="GET">
+        <service class="MarcinDykas\Promotions\Api\PromotionRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::promotion_view"/>
+        </resources>
+    </route>
+    <route url="/V1/promotions/:promotionId" method="DELETE">
+        <service class="MarcinDykas\Promotions\Api\PromotionRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::promotion_delete"/>
+        </resources>
+    </route>
+    <route url="/V1/promotions" method="POST">
+        <service class="MarcinDykas\Promotions\Api\PromotionRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::promotion_save"/>
+        </resources>
+    </route>
+    <route url="/V1/promotions" method="GET">
+        <service class="MarcinDykas\Promotions\Api\PromotionRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="MarcinDykas_Promotions::promotion_view"/>
+        </resources>
+    </route>
+</routes>

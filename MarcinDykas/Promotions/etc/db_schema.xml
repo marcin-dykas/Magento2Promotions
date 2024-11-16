@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) Marcin Dykas
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<table name="mdykas_promotions_group" resource="default" engine="innodb" comment="Promotion group">
+        <column xsi:type="int" name="group_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Promotion Group Unique Id"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Promotion group name"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="group_id"/>
+        </constraint>
+    </table>
+    <table name="mdykas_promotions_promotion" resource="default" engine="innodb" comment="Promotion">
+        <column xsi:type="int" name="promotion_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Promotion Unique Id"/>
+        <column xsi:type="int" name="group_id" padding="10" unsigned="true" nullable="false" identity="false"
+                comment="Parent Group ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Promotion name"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="promotion_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="FK_MDYKAS_PROMOTIONS_GROUP_GROUP_ID_MDYKAS_PROMOTIONS_PROMOTION_GROUP_ID"
+                    table="mdykas_promotions_promotion" column="group_id" referenceTable="mdykas_promotions_group"
+                    referenceColumn="group_id" onDelete="CASCADE"/>
+        <index referenceId="MDYKAS_PROMOTIONS_PROMOTION_GROUP_ID" indexType="btree">
+            <column name="group_id"/>
+        </index>
+
+    </table>
+</schema>

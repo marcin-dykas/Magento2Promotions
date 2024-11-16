@@ -1,0 +1,29 @@
+{
+    "mdykas_promotions_group": {
+        "column": {
+            "group_id": true,
+            "name": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mdykas_promotions_promotion": {
+        "column": {
+            "promotion_id": true,
+            "group_id": true,
+            "name": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "MDYKAS_PROMOTIONS_PROMOTION_GROUP_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_D48A50218FEAE28B791643CB6932A8E5": true
+        }
+    }
+}

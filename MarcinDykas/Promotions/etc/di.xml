@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) Marcin Dykas
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Data API preferences -->
+    <preference for="MarcinDykas\Promotions\Api\Data\GroupInterface"
+                type="MarcinDykas\Promotions\Model\Group"/>
+    <preference for="MarcinDykas\Promotions\Api\Data\PromotionInterface"
+                type="MarcinDykas\Promotions\Model\Promotion"/>
+
+    <!-- API preferences -->
+    <preference for="MarcinDykas\Promotions\Api\PromotionRepositoryInterface"
+                type="MarcinDykas\Promotions\Model\PromotionRepository"/>
+    <preference for="MarcinDykas\Promotions\Api\GroupRepositoryInterface"
+                type="MarcinDykas\Promotions\Model\GroupRepository"/>
+</config>

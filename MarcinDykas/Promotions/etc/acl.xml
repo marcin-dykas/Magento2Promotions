@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) Marcin Dykas
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+<acl>
+    <resources>
+        <resource id="Magento_Backend::admin">
+            <resource id="MarcinDykas_Promotions::group" title="Groups Management" sortOrder="10">
+                <resource id="MarcinDykas_Promotions::group_view" title="View Groups" sortOrder="10"/>
+                <resource id="MarcinDykas_Promotions::group_save" title="Save Groups" sortOrder="20"/>
+                <resource id="MarcinDykas_Promotions::group_delete" title="Delete Groups" sortOrder="30"/>
+            </resource>
+            <resource id="MarcinDykas_Promotions::promotion" title="Promotions Management" sortOrder="20">
+                <resource id="MarcinDykas_Promotions::promotion_view" title="View Promotions" sortOrder="10"/>
+                <resource id="MarcinDykas_Promotions::promotion_save" title="Save Promotions" sortOrder="20"/>
+                <resource id="MarcinDykas_Promotions::promotion_delete" title="Delete Promotions" sortOrder="30"/>
+            </resource>
+        </resource>
+    </resources>
+</acl>
+</config>

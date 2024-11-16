@@ -1,0 +1,14 @@
+{
+    "name": "marcin-dykas/promotions",
+    "description": "Module adds two tables to database and three REST methods to work with data",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MarcinDykas\\Promotions\\": ""
+        }
+    }
+}

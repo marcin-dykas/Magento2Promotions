@@ -19,7 +19,7 @@ interface PromotionRepositoryInterface
      * PromotionInterface save
      *
      * @param PromotionInterface $promotion
-     * @return PromotionInterface
+     * @return \MarcinDykas\Promotions\Api\Data\PromotionInterface
      */
     public function save(PromotionInterface $promotion): PromotionInterface;
 
@@ -27,7 +27,7 @@ interface PromotionRepositoryInterface
      * PromotionInterface get by ID
      *
      * @param int $promotionId
-     * @return PromotionInterface
+     * @return \MarcinDykas\Promotions\Api\Data\PromotionInterface
      */
     public function getById(int $promotionId): PromotionInterface;
 
@@ -51,7 +51,7 @@ interface PromotionRepositoryInterface
      * PromotionInterface get list
      *
      * @param SearchCriteriaInterface $searchCriteria
-     * @return PromotionInterface[]
+     * @return \MarcinDykas\Promotions\Api\Data\PromotionInterface[]
      */
     public function getList(SearchCriteriaInterface $searchCriteria): array;
 }

@@ -21,7 +21,7 @@ interface GroupRepositoryInterface
      * GroupInterface save
      *
      * @param GroupInterface $group
-     * @return GroupInterface
+     * @return \MarcinDykas\Promotions\Api\Data\GroupInterface
      */
     public function save(GroupInterface $group): GroupInterface;
 
@@ -29,7 +29,7 @@ interface GroupRepositoryInterface
      * GroupInterface get by ID
      *
      * @param int $groupId
-     * @return GroupInterface
+     * @return \MarcinDykas\Promotions\Api\Data\GroupInterface
      */
     public function getById(int $groupId): GroupInterface;
 
@@ -53,7 +53,7 @@ interface GroupRepositoryInterface
      * GroupInterface get list
      *
      * @param SearchCriteriaInterface $searchCriteria
-     * @return GroupInterface[]
+     * @return \MarcinDykas\Promotions\Api\Data\GroupInterface[]
      */
     public function getList(SearchCriteriaInterface $searchCriteria): array;
 }

@@ -4,7 +4,8 @@
  * @copyright Copyright (c) Marcin Dykas
  */
 -->
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Webapi/etc/webapi.xsd">
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Webapi/etc/webapi.xsd">
     <!-- Group Endpoints -->
     <route url="/V1/groups/:groupId" method="GET">
         <service class="MarcinDykas\Promotions\Api\GroupRepositoryInterface" method="getById"/>

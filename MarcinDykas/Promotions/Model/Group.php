@@ -17,6 +17,11 @@ use MarcinDykas\Promotions\Model\ResourceModel\Group as ResourceGroup;
  */
 class Group extends AbstractExtensibleModel implements GroupInterface
 {
+    /**
+     * Model init
+     *
+     * @return void
+     */
     protected function _construct(): void
     {
         $this->_init(ResourceGroup::class);

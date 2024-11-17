@@ -14,6 +14,11 @@ use MarcinDykas\Promotions\Model\ResourceModel\Group as GroupResource;
 
 class Collection extends AbstractCollection
 {
+    /**
+     * Collection init
+     *
+     * @return void
+     */
     protected function _construct(): void
     {
         $this->_init(GroupModel::class, GroupResource::class);

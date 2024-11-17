@@ -59,6 +59,8 @@ class AddSampleData implements DataPatchInterface
     }
 
     /**
+     * Adding sample data
+     *
      * @param string $groupName
      * @param string $promotionName
      * @return void

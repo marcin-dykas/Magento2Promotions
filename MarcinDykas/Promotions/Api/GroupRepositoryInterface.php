@@ -18,30 +18,40 @@ use Magento\Framework\Api\SearchResultsInterface;
 interface GroupRepositoryInterface
 {
     /**
+     * GroupInterface save
+     *
      * @param GroupInterface $group
      * @return GroupInterface
      */
     public function save(GroupInterface $group): GroupInterface;
 
     /**
+     * GroupInterface get by ID
+     *
      * @param int $groupId
      * @return GroupInterface
      */
     public function getById(int $groupId): GroupInterface;
 
     /**
+     * GroupInterface delete
+     *
      * @param GroupInterface $group
      * @return void
      */
     public function delete(GroupInterface $group): void;
 
     /**
+     * GroupInterface delete by ID
+     *
      * @param int $groupId
      * @return void
      */
     public function deleteById(int $groupId): void;
 
     /**
+     * GroupInterface get list
+     *
      * @param SearchCriteriaInterface $searchCriteria
      * @return GroupInterface[]
      */

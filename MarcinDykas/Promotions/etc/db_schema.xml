@@ -10,8 +10,10 @@
         <column xsi:type="int" name="group_id" padding="10" unsigned="true" nullable="false" identity="true"
                 comment="Promotion Group Unique Id"/>
         <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Promotion group name"/>
-        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
-        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                disabled="false"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                disabled="false"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="group_id"/>
         </constraint>
@@ -22,12 +24,15 @@
         <column xsi:type="int" name="group_id" padding="10" unsigned="true" nullable="false" identity="false"
                 comment="Parent Group ID"/>
         <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Promotion name"/>
-        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
-        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" disabled="false"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                disabled="false"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                disabled="false"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="promotion_id"/>
         </constraint>
-        <constraint xsi:type="foreign" referenceId="FK_MDYKAS_PROMOTIONS_GROUP_GROUP_ID_MDYKAS_PROMOTIONS_PROMOTION_GROUP_ID"
+        <constraint xsi:type="foreign"
+                    referenceId="FK_MDYKAS_PROMOTIONS_GROUP_GROUP_ID_MDYKAS_PROMOTIONS_PROMOTION_GROUP_ID"
                     table="mdykas_promotions_promotion" column="group_id" referenceTable="mdykas_promotions_group"
                     referenceColumn="group_id" onDelete="CASCADE"/>
         <index referenceId="MDYKAS_PROMOTIONS_PROMOTION_GROUP_ID" indexType="btree">

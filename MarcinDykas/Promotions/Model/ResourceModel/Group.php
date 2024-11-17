@@ -15,6 +15,11 @@ class Group extends AbstractDb
 {
     public const TABLE = 'mdykas_promotions_group';
 
+    /**
+     * ResourceModel init
+     *
+     * @return void
+     */
     protected function _construct(): void
     {
         $this->_init(self::TABLE, GroupInterface::FIELD_GROUP_ID);

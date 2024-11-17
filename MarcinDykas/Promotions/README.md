@@ -1,5 +1,3 @@
-
-
 # Promotions - Module adds two tables to database and three REST methods to work with data
 
 ### Added Table - mdykas_promotions_group
@@ -13,6 +11,30 @@
 4. Sample data is added for testing/playing purposes
 5. Create admin account using 2FA
 5. Execute example endpoint CLI requests changing your credentials and domain accordingly 
+
+## Unit tests
+### Groups
+./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/MarcinDykas/Promotions/Test/Unit/Model/GroupRepositoryTest.php
+PHPUnit 9.6.21 by Sebastian Bergmann and contributors.
+
+......                                                                                                                                                                         6 / 6 (100%)
+
+Time: 00:00.036, Memory: 12.00 MB
+
+OK (6 tests, 19 assertions)
+
+### Promotions
+./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/MarcinDykas/Promotions/Test/Unit/Model/PromotionRepositoryTest.php
+PHPUnit 9.6.21 by Sebastian Bergmann and contributors.
+
+......                                                                                                                                                                         6 / 6 (100%)
+
+Time: 00:00.042, Memory: 12.00 MB
+
+OK (6 tests, 19 assertions)
+
+## Magento2 coding standards met
+./vendor/bin/phpcs --standard=Magento2 app/code/MarcinDykas/Promotions
 
 ## Example Endpoints usage:
 
@@ -56,23 +78,4 @@ curl --location --request DELETE 'https://magento.test/rest/V1/groups/1' --heade
 curl --location --request DELETE 'https://magento.test/rest/V1/promotions/2' --header 'Accept: /' --header 'Connection: keep-alive' --header 'Authorization: Bearer eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjIsInV0eXBpZCI6MiwiaWF0IjoxNzMxNzgwMDQ5LCJleHAiOjE3MzE3ODM2NDl9.VAixQI_jcCVCS-6h2767YafIxzYthvKc4rU2hzNkYD8'
 
 
-## Unit tests 
-### Groups
-./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/MarcinDykas/Promotions/Test/Unit/Model/GroupRepositoryTest.php
-PHPUnit 9.6.21 by Sebastian Bergmann and contributors.
 
-......                                                                                                                                                                         6 / 6 (100%)
-
-Time: 00:00.036, Memory: 12.00 MB
-
-OK (6 tests, 19 assertions)
-
-### Promotions
-./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/MarcinDykas/Promotions/Test/Unit/Model/PromotionRepositoryTest.php
-PHPUnit 9.6.21 by Sebastian Bergmann and contributors.
-
-......                                                                                                                                                                         6 / 6 (100%)
-
-Time: 00:00.042, Memory: 12.00 MB
-
-OK (6 tests, 19 assertions)

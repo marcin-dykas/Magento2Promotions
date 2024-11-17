@@ -25,15 +25,25 @@ use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
  */
 class PromotionRepository implements PromotionRepositoryInterface
 {
+    /**
+     * @param PromotionResource $resource
+     * @param \MarcinDykas\Promotions\Model\PromotionFactory $promotionFactory
+     * @param PromotionCollectionFactory $promotionCollectionFactory
+     * @param SearchResultsInterfaceFactory $searchResultsFactory
+     * @param CollectionProcessorInterface $collectionProcessor
+     */
     public function __construct(
         private readonly PromotionResource $resource,
         private readonly PromotionFactory $promotionFactory,
         private readonly PromotionCollectionFactory $promotionCollectionFactory,
         private readonly SearchResultsInterfaceFactory $searchResultsFactory,
         private readonly CollectionProcessorInterface $collectionProcessor,
-    ) {}
+    ) {
+    }
 
     /**
+     * PromotionInterface save
+     *
      * @param PromotionInterface $promotion
      * @return PromotionInterface
      * @throws \Magento\Framework\Exception\AlreadyExistsException
@@ -45,8 +55,11 @@ class PromotionRepository implements PromotionRepositoryInterface
     }
 
     /**
+     * PromotionInterface get by ID
+     *
      * @param int $promotionId
      * @return PromotionInterface
+     * @throws NoSuchEntityException
      */
     public function getById(int $promotionId): PromotionInterface
     {
@@ -59,6 +72,8 @@ class PromotionRepository implements PromotionRepositoryInterface
     }
 
     /**
+     * PromotionInterface delete
+     *
      * @param PromotionInterface $promotion
      * @return void
      * @throws \Exception
@@ -73,6 +88,8 @@ class PromotionRepository implements PromotionRepositoryInterface
     }
 
     /**
+     * PromotionInterface delete by ID
+     *
      * @param int $promotionId
      * @return void
      * @throws \Exception
@@ -84,6 +101,8 @@ class PromotionRepository implements PromotionRepositoryInterface
     }
 
     /**
+     * PromotionInterface get list
+     *
      * @param SearchCriteriaInterface $searchCriteria
      * @return PromotionInterface[]
      */

@@ -22,13 +22,34 @@ use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 
 class GroupRepositoryTest extends TestCase
 {
+    /**
+     * @var GroupRepository
+     */
     private GroupRepository $repository;
+    /**
+     * @var GroupResource
+     */
     private $resourceMock;
+    /**
+     * @var GroupFactory
+     */
     private $groupFactoryMock;
+    /**
+     * @var GroupCollectionFactory
+     */
     private $collectionFactoryMock;
+    /**
+     * @var SearchResultsInterfaceFactory
+     */
     private $searchResultsFactoryMock;
+    /**
+     * @var CollectionProcessorInterface
+     */
     private $collectionProcessorMock;
 
+    /**
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->resourceMock = $this->createMock(GroupResource::class);

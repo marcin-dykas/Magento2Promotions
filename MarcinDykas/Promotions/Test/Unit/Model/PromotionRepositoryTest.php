@@ -22,14 +22,34 @@ use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 
 class PromotionRepositoryTest extends TestCase
 {
+    /**
+     * @var PromotionRepository
+     */
     private PromotionRepository $repository;
-
+    /**
+     * @var PromotionResource
+     */
     private $resourceMock;
+    /**
+     * @var PromotionFactory
+     */
     private $promotionFactoryMock;
+    /**
+     * @var PromotionCollectionFactory
+     */
     private $collectionFactoryMock;
+    /**
+     * @var SearchResultsInterfaceFactory
+     */
     private $searchResultsFactoryMock;
+    /**
+     * @var CollectionProcessorInterface
+     */
     private $collectionProcessorMock;
 
+    /**
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->resourceMock = $this->createMock(PromotionResource::class);

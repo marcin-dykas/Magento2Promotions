@@ -15,6 +15,11 @@ class Promotion extends AbstractDb
 {
     public const TABLE = 'mdykas_promotions_promotion';
 
+    /**
+     * ResourceModel init
+     *
+     * @return void
+     */
     protected function _construct(): void
     {
         $this->_init(self::TABLE, PromotionInterface::FIELD_PROMOTION_ID);

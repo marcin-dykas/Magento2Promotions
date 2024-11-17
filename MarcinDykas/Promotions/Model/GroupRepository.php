@@ -25,15 +25,25 @@ use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
  */
 class GroupRepository implements GroupRepositoryInterface
 {
+    /**
+     * @param GroupResource $resource
+     * @param \MarcinDykas\Promotions\Model\GroupFactory $groupFactory
+     * @param GroupCollectionFactory $groupCollectionFactory
+     * @param SearchResultsInterfaceFactory $searchResultsFactory
+     * @param CollectionProcessorInterface $collectionProcessor
+     */
     public function __construct(
         private readonly GroupResource $resource,
         private readonly GroupFactory $groupFactory,
         private readonly GroupCollectionFactory $groupCollectionFactory,
         private readonly SearchResultsInterfaceFactory $searchResultsFactory,
         private readonly CollectionProcessorInterface $collectionProcessor,
-    ) {}
+    ) {
+    }
 
     /**
+     * GroupInterface save
+     *
      * @param GroupInterface $group
      * @return GroupInterface
      * @throws \Magento\Framework\Exception\AlreadyExistsException
@@ -45,8 +55,11 @@ class GroupRepository implements GroupRepositoryInterface
     }
 
     /**
+     * GroupInterface delete by ID
+     *
      * @param int $groupId
      * @return GroupInterface
+     * @throws NoSuchEntityException
      */
     public function getById(int $groupId): GroupInterface
     {
@@ -59,6 +72,8 @@ class GroupRepository implements GroupRepositoryInterface
     }
 
     /**
+     * GroupInterface delete
+     *
      * @param GroupInterface $group
      * @return void
      * @throws \Exception
@@ -73,6 +88,8 @@ class GroupRepository implements GroupRepositoryInterface
     }
 
     /**
+     * GroupInterface delete by ID
+     *
      * @param int $groupId
      * @return void
      * @throws \Exception
@@ -84,6 +101,8 @@ class GroupRepository implements GroupRepositoryInterface
     }
 
     /**
+     * GroupInterface get list
+     *
      * @param SearchCriteriaInterface $searchCriteria
      * @return GroupInterface[]
      */

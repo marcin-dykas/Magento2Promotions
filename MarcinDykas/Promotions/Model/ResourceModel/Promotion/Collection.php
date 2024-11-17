@@ -14,6 +14,12 @@ use MarcinDykas\Promotions\Model\ResourceModel\Promotion as PromotionResource;
 
 class Collection extends AbstractCollection
 {
+    /**
+     * Collection init
+     *
+     * @return void
+     * /
+     */
     protected function _construct(): void
     {
         $this->_init(PromotionModel::class, PromotionResource::class);

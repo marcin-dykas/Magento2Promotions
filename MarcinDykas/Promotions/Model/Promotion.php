@@ -17,6 +17,11 @@ use MarcinDykas\Promotions\Model\ResourceModel\Promotion as PromotionResource;
  */
 class Promotion extends AbstractExtensibleModel implements PromotionInterface
 {
+    /**
+     * Model init
+     *
+     * @return void
+     */
     protected function _construct(): void
     {
         $this->_init(PromotionResource::class);
